@@ -1,0 +1,32 @@
+services:
+  web:
+    image: php:7.4-apache
+    ports:
+      - "8081:80"
+    volumes:
+      - ./www:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    build: .
+    depends_on:
+      - db
+    networks:
+      - yii1-network
+
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: yii1db
+      MYSQL_USER: yii1user
+      MYSQL_PASSWORD: yii1pass
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - yii1-network
+
+networks:
+  yii1-network:
+    driver: bridge

@@ -1,0 +1,13 @@
+/mysql/data/
+/mysql/tmp/
+/mysql/log/
+
+mysql/data/auto.cnf
+mysql/data/ib_buffer_pool
+mysql/data/mysql.sock
+mysql/data/*.pid
+mysql/data/*.err
+mysql/data/*.log
+
+/var/lib/mysql/
+/tmp/mysql*
