@@ -74,11 +74,6 @@ class Book extends CActiveRecord
         $criteria->params = array(':book_id' => $this->id);
         BookAuthor::model()->deleteAll($criteria);
 
-        $data = [];
-        foreach ($authorIds as $authorId) {
-            $data[] = [$this->id, (int)$authorId];
-        }
-
         foreach ($authorIds as $authorId) {
             $authorId = (int)$authorId;
             if ($authorId <= 0) {

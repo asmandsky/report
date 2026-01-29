@@ -31,7 +31,7 @@ class ReportController extends Controller
             $result[] = [
                 'id' => $author->id,
                 'full_name' => $author->full_name,
-                'book_count' => (int)$author->book_count,
+                'book_count' => $author->book_count,
             ];
         }
 
