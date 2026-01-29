@@ -109,7 +109,7 @@ class Book extends CActiveRecord
     {
         $errors = $this->getErrors();
 
-        $errorMessages = [];
+        $errorMessages = array();
 
         foreach ($errors as $attribute => $messages) {
             foreach ($messages as $message) {

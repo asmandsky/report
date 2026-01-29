@@ -67,13 +67,13 @@ class AuthorController extends Controller
             $model->attributes = $_POST['Author'];
             if ($model->save()) {
                 Yii::app()->user->setFlash('success', 'Автор успешно создан.');
-                $this->redirect(['view', 'id' => $model->id]);
+                $this->redirect(array('view', 'id' => $model->id));
             } else {
                 Yii::app()->user->setFlash('error', implode('<br>', $model->getErrorsModel()));
             }
         }
 
-        $this->render('create', ['model' => $model]);
+        $this->render('create', array('model' => $model));
     }
 
     /**
@@ -87,13 +87,13 @@ class AuthorController extends Controller
             $model->attributes = $_POST['Author'];
             if ($model->save()) {
                 Yii::app()->user->setFlash('success', 'Автор успешно обновлён.');
-                $this->redirect(['view', 'id' => $model->id]);
+                $this->redirect(array('view', 'id' => $model->id));
             } else {
                 Yii::app()->user->setFlash('error', implode('<br>', $model->getErrorsModel()));
             }
         }
 
-        $this->render('update', ['model' => $model]);
+        $this->render('update', array('model' => $model));
     }
 
     /**

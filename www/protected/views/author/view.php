@@ -14,5 +14,5 @@ $this->pageTitle = 'Автор';
 <?php echo CHtml::link(
     'Редактировать',
     array('update', 'id' => $author->id),
-    ['class' => 'btn btn-primary']
+    array('class' => 'btn btn-primary')
 ); ?>

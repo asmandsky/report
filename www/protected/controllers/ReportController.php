@@ -19,7 +19,7 @@ class ReportController extends Controller
             JOIN book book ON ba.book_id = book.id
         ';
         $criteria->condition = 'book.year = :year';
-        $criteria->params = [':year' => $year];
+        $criteria->params = array(':year' => $year);
         $criteria->group = 't.id, t.full_name';
         $criteria->order = 'book_count DESC';
         $criteria->limit = 10;
@@ -28,16 +28,16 @@ class ReportController extends Controller
 
         $result = [];
         foreach ($topAuthors as $author) {
-            $result[] = [
+            $result[] = array(
                 'id' => $author->id,
                 'full_name' => $author->full_name,
                 'book_count' => $author->book_count,
-            ];
+            );
         }
 
-        $this->render('topAuthors', [
+        $this->render('topAuthors', array(
             'topAuthors' => $result,
             'year' => $year,
-        ]);
+        ));
     }
 }

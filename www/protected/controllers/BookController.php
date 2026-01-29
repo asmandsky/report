@@ -101,9 +101,9 @@ class BookController extends Controller
     {
         $model = $this->loadModel($id);
 
-        $selectedAuthors = BookAuthor::model()->findAllByAttributes([
+        $selectedAuthors = BookAuthor::model()->findAllByAttributes(array(
             'book_id' => $model->id,
-        ]);
+        ));
         $selectedAuthorIds = [];
         foreach ($selectedAuthors as $link) {
             $selectedAuthorIds[] = $link->author_id;

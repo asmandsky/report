@@ -10,7 +10,7 @@ $this->pageTitle = 'Список книг';
 <?php echo CHtml::link(
     'Добавить',
     array('create'),
-    ['class' => 'btn btn-primary']
+    array('class' => 'btn btn-primary')
 ); ?>
 
 <?php foreach ($books as $book): ?>
