@@ -3,6 +3,38 @@
 class BookController extends Controller
 {
     /**
+     * @return string[]
+     */
+    public function filters()
+    {
+        return array('accessControl');
+    }
+
+    /**
+     * @return array[]
+     */
+    public function accessRules()
+    {
+        return array(
+            array(
+                'allow',
+                'actions' => array('index', 'view'),
+                'users' => array('*'),
+            ),
+            array(
+                'allow',
+                'actions' => array('create', 'update', 'delete'),
+                'users' => array('@'),
+            ),
+            array(
+                'deny',
+                'users' => array('?'),
+                'message' => 'Для выполнения этого действия требуется авторизация.',
+            ),
+        );
+    }
+
+    /**
      * @return void
      */
     public function actionIndex()
