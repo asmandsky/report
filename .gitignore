@@ -12,4 +12,4 @@ mysql/data/*.log
 /var/lib/mysql/
 /tmp/mysql*
 
-/runtime/
+/www/protected/runtime/
